@@ -1,0 +1,36 @@
+{
+    "name": "globalis/wp-cubi-helpers",
+    "description": "Collection of wp-cubi functions for WordPress",
+    "type": "library",
+    "license": "GPL-2.0",
+    "homepage": "https://github.com/wp-globalis-tools/wp-cubi-helpers/wp-cubi/",
+    "authors": [
+        {
+            "name": "Pierre Dargham",
+            "homepage": "https://github.com/pierre-dargham/"
+        },
+        {
+            "name": "GLOBALIS media systems",
+            "homepage": "https://www.globalis-ms.com/"
+        }
+    ],
+    "keywords": [
+        "wp-cubi", "globalis", "wordpress", "helpers", "snippets", "functions", "composer", "wp"
+    ],
+    "support": {
+        "issues": "https://github.com/wp-globalis-tools/wp-cubi-helpers/issues"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^2.5.1"
+    },
+    "autoload": {
+        "files": [
+            "src/functions-filters.php",
+            "src/functions-mails.php",
+            "src/functions-permalinks.php",
+            "src/functions-templating.php",
+            "src/functions-urls.php",
+            "src/functions-utils.php"
+        ]
+    }
+}
