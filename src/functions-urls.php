@@ -18,11 +18,13 @@ function get_current_url($remove_query_args = false)
             $url   = WP_SCHEME . '://' . WP_DOMAIN . $parts['path'];
         }
     } else {
-        $protocol = isset($_SERVER['HTTPS']) ? 'https' : 'http';
-        $url = $protocol . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+        $protocol = is_ssl() ? 'https' : 'http';
+        $url      = $protocol . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+        $host     = !empty($_SERVER['HTTP_X_FORWARDED_HOST']) ? $_SERVER['HTTP_X_FORWARDED_HOST'] : $_SERVER['HTTP_HOST'];
+
         if ($remove_query_args) {
             $parts = parse_url($url);
-            $url   = $protocol . '://' . $_SERVER['HTTP_HOST'] . $parts['path'];
+            $url   = $protocol . '://' . $host . $parts['path'];
         }
     }
 
