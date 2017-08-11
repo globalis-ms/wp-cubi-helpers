@@ -11,21 +11,18 @@ namespace Globalis\WP\Cubi;
  */
 function get_current_url($remove_query_args = false)
 {
-    if (defined(WP_SCHEME) && defined(WP_DOMAIN)) {
-        $url = WP_SCHEME . '://' . WP_DOMAIN . $_SERVER['REQUEST_URI'];
-        if ($remove_query_args) {
-            $parts = parse_url($url);
-            $url   = WP_SCHEME . '://' . WP_DOMAIN . $parts['path'];
-        }
+    if (defined('WP_SCHEME') && defined('WP_DOMAIN')) {
+        $protocol = WP_SCHEME;
+        $host     = WP_DOMAIN;
     } else {
         $protocol = is_ssl() ? 'https' : 'http';
         $host     = !empty($_SERVER['HTTP_X_FORWARDED_HOST']) ? $_SERVER['HTTP_X_FORWARDED_HOST'] : $_SERVER['HTTP_HOST'];
-        $url      = $protocol . '://' . $host . $_SERVER['REQUEST_URI'];
-
-        if ($remove_query_args) {
-            $parts = parse_url($url);
-            $url   = $protocol . '://' . $host . $parts['path'];
-        }
+    }
+    
+    $url = $protocol . '://' . $host . $_SERVER['REQUEST_URI'];
+    if ($remove_query_args) {
+        $parts = parse_url($url);
+        $url   = $protocol . '://' . $host . $parts['path'];
     }
 
     return $url;
