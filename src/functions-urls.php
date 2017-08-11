@@ -19,8 +19,8 @@ function get_current_url($remove_query_args = false)
         }
     } else {
         $protocol = is_ssl() ? 'https' : 'http';
-        $url      = $protocol . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
         $host     = !empty($_SERVER['HTTP_X_FORWARDED_HOST']) ? $_SERVER['HTTP_X_FORWARDED_HOST'] : $_SERVER['HTTP_HOST'];
+        $url      = $protocol . '://' . $host . $_SERVER['REQUEST_URI'];
 
         if ($remove_query_args) {
             $parts = parse_url($url);
