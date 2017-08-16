@@ -43,7 +43,7 @@ function trigger_404()
 }
 
 /**
- * Override php configuration options
+ * Override php memory / time limits configuration
  *
  * @param int    $time_limit   The maximum time in seconds a script is allowed to run before it is terminated by the parser.
  * @param string $memory_limit The maximum amount of memory in bytes that a script is allowed to allocate.
