@@ -29,17 +29,22 @@ function str_ends_with($string, $search)
 }
 
 /**
- * Set status header to 404, but do not redirect to 404 page
+ * Trigger a 404 WordPress page
+ *
+ * @param WP_Query $query A WP_Query instance. Defaults to the $wp_query global.
  *
  * @return void
  */
-function trigger_404()
+function trigger_404($query = null)
 {
     global $wp_query;
-    if (isset($wp_query)) {
+    if (isset($query)) {
+        $query->set_404();
+    } elseif (isset($wp_query)) {
         $wp_query->set_404();
     }
     status_header(404);
+    nocache_headers();
 }
 
 /**
