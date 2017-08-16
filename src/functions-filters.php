@@ -2,6 +2,16 @@
 
 namespace Globalis\WP\Cubi;
 
+/**
+ * Remove filter from anonymous object
+ *
+ * @param string $tag           The action hook to which the function to be removed is hooked.
+ * @param string $class_name    The class that contains the function which should be removed.
+ * @param string $method_name   The function which should be removed.
+ * @param int    $priority      The priority of the function (as defined when the function was originally hooked).
+ *
+ * @return int   $removed       The number of filters removed.
+ */
 function remove_filter_anonymous_object($tag, $class_name, $method_name, $priority = 10)
 {
     global $wp_filter;
