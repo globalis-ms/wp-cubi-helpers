@@ -12,8 +12,11 @@ namespace Globalis\WP\Cubi;
  */
 function get_permalink_by_template($template, $default = false)
 {
-    static $permalink;
-    if (!isset($permalink)) {
+    static $permalinks;
+    if (!isset($permalinks)) {
+        $permalinks = [];
+    }
+    if (!isset($permalinks[$template])) {
         $pages = new \WP_Query([
             'posts_per_page' => 1,
             'post_type'      => 'page',
@@ -22,10 +25,14 @@ function get_permalink_by_template($template, $default = false)
             'meta_value'     =>  $template,
         ]);
         if (empty($pages->posts)) {
-            $permalink = $default;
+            $permalinks[$template] = false;
         } else {
-            $permalink = get_permalink($pages->posts[0]->ID);
+            $permalinks[$template] = get_permalink($pages->posts[0]->ID);
         }
     }
-    return $permalink;
+    if (false !== $permalinks[$template]) {
+        return $permalinks[$template];
+    } else {
+        return $default;
+    }
 }
