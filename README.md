@@ -6,3 +6,34 @@
 Collection of wp-cubi functions for WordPress
 
 [![wp-cubi](https://github.com/wp-globalis-tools/wp-cubi-logo/raw/master/wp-cubi-500x175.jpg)](https://github.com/globalis-ms/wp-cubi/)
+
+## Available functions
+
+### Filters
+
+- `remove_filter_anonymous_object($tag, $class_name, $method_name, $priority = 10)`
+
+### Mails
+
+- `wp_mail_html($to, $subject, $message, $headers = [], $attachments = [])`
+
+### Permalinks
+
+- `get_permalink_by_template($template, $default = false)`
+
+### Templating
+
+- `include_template_part($file, $data = [], $return = false)`
+
+### Urls
+
+- `get_current_url($remove_query_args = false)`
+- `current_url_starts_with($search)`
+- `current_url_ends_with($search)`
+
+### Utils
+
+- `str_starts_with($string, $search)`
+- `str_ends_with($string, $search)`
+- `trigger_404($query = null)`
+- `override_php_limits($time_limit = 0, $memory_limit = '512M')`
