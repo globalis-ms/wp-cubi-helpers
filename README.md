@@ -28,8 +28,8 @@ Collection of wp-cubi functions for WordPress
 ### Urls
 
 - `get_current_url($remove_query_args = false)`
-- `current_url_starts_with($search)`
-- `current_url_ends_with($search)`
+- `current_url_starts_with($search, $remove_query_args = false)`
+- `current_url_ends_with($search, $remove_query_args = false)`
 
 ### Utils
 
