@@ -32,22 +32,24 @@ function get_current_url($remove_query_args = false)
  * Check if current url starts with given string
  *
  * @param  string $search The string searched at the beginning of the current url.
+ * @param  bool   $remove_query_args If true, will ignore query string in current url.
  *
  * @return bool           If the current url starts with searched string.
  */
-function current_url_starts_with($search)
+function current_url_starts_with($search, $remove_query_args = false)
 {
-    return str_starts_with(get_current_url(), $search);
+    return str_starts_with(get_current_url($remove_query_args), $search);
 }
 
 /**
  * Check if current url ends with given string
  *
  * @param  string $search The string searched at the end of the current url.
+ * @param  bool   $remove_query_args If true, will ignore query string in current url.
  *
  * @return bool           If the current url ends with searched string.
  */
-function current_url_ends_with($search)
+function current_url_ends_with($search, $remove_query_args = false)
 {
-    return str_ends_with(get_current_url(), $search);
+    return str_ends_with(get_current_url($remove_query_args), $search);
 }
