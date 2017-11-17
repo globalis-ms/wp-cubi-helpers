@@ -3,7 +3,7 @@
     "description": "Collection of wp-cubi functions for WordPress",
     "type": "library",
     "license": "GPL-2.0",
-    "homepage": "https://github.com/wp-globalis-tools/wp-cubi-helpers/wp-cubi/",
+    "homepage": "https://github.com/globalis-ms/wp-cubi-helpers",
     "authors": [
         {
             "name": "Pierre Dargham",
@@ -18,7 +18,7 @@
         "wp-cubi", "globalis", "wordpress", "helpers", "snippets", "functions", "composer", "wp"
     ],
     "support": {
-        "issues": "https://github.com/wp-globalis-tools/wp-cubi-helpers/issues"
+        "issues": "https://github.com/globalis-ms/wp-cubi-helpers/issues"
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "^2.5.1"
