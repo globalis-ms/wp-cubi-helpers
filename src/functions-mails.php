@@ -16,5 +16,5 @@ namespace Globalis\WP\Cubi;
 function wp_mail_html($to, $subject, $message, $headers = [], $attachments = [])
 {
     $headers = array_merge(['Content-Type: text/html; charset=' . get_bloginfo('charset')], $headers);
-    wp_mail($to, $subject, $message, $headers, $attachments);
+    return wp_mail($to, $subject, $message, $headers, $attachments);
 }
