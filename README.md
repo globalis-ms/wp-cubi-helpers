@@ -11,6 +11,8 @@ Collection of wp-cubi functions for WordPress
 
 ### Filters
 
+- `add_filter($tag, $function_to_add, $priority = 10, $accepted_args = 1)`
+- `add_action($tag, $function_to_add, $priority = 10, $accepted_args = 1)`
 - `remove_filter_anonymous_object($tag, $class_name, $method_name, $priority = 10)`
 
 ### Mails
