@@ -47,13 +47,15 @@ function trigger_404($query = null)
     nocache_headers();
 }
 
+
+
 /**
  * Override php memory / time limits configuration
  *
  * @param int    $time_limit   The maximum time in seconds a script is allowed to run before it is terminated by the parser.
  * @param string $memory_limit The maximum amount of memory in bytes that a script is allowed to allocate.
  */
-function override_php_limits($time_limit = 0, $memory_limit = '512M')
+function override_php_limits($time_limit = 604800, $memory_limit = '512M')
 {
     ini_set('memory_limit', $memory_limit);
     ini_set('max_execution_time', $time_limit);
