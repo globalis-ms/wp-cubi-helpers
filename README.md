@@ -38,4 +38,4 @@ Collection of wp-cubi functions for WordPress
 - `str_starts_with($string, $search)`
 - `str_ends_with($string, $search)`
 - `trigger_404($query = null)`
-- `override_php_limits($time_limit = 0, $memory_limit = '512M')`
+- `override_php_limits($time_limit = 604800, $memory_limit = '512M')`
