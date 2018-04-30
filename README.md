@@ -1,5 +1,6 @@
 # [wp-cubi-helpers](https://github.com/globalis-ms/wp-cubi-helpers)
 
+[![Build Status](https://travis-ci.org/globalis-ms/wp-cubi-helpers.svg?branch=master)](https://travis-ci.org/globalis-ms/wp-cubi-helpers)
 [![Latest Stable Version](https://poser.pugx.org/globalis/wp-cubi-helpers/v/stable)](https://packagist.org/packages/globalis/wp-cubi-helpers)
 [![License](https://poser.pugx.org/globalis/wp-cubi-helpers/license)](https://github.com/globalis-ms/wp-cubi-helpers/blob/master/LICENSE.md)
 
