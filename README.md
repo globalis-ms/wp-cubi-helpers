@@ -10,6 +10,12 @@ Collection of wp-cubi functions for WordPress
 
 ## Available functions
 
+### Cache
+
+- `flush_cache_all()`
+- `flush_cache_wpdb()`
+- `flush_cache_object()`
+
 ### Filters
 
 - `add_filter($tag, $function_to_add, $priority = 10, $accepted_args = 1)`
