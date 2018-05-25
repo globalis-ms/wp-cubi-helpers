@@ -47,8 +47,6 @@ function trigger_404($query = null)
     nocache_headers();
 }
 
-
-
 /**
  * Override php memory / time limits configuration
  *
