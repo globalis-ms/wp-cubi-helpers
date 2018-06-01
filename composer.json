@@ -25,6 +25,7 @@
     },
     "autoload": {
         "files": [
+            "src/functions-cache.php",
             "src/functions-filters.php",
             "src/functions-mails.php",
             "src/functions-permalinks.php",
