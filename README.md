@@ -15,6 +15,26 @@ Collection of wp-cubi functions for WordPress
 - `flush_cache_all()`
 - `flush_cache_wpdb()`
 - `flush_cache_object()`
+- `get_size_cache_wpdb()`
+- `get_size_cache_object()`
+- `reset_cache_wpdb($size)`
+- `reset_cache_object($size)`
+- `pop_cache_wpdb()`
+- `pop_cache_object()`
+- `savequeries_enabled()`
+
+### Debug
+
+- `mysql_enable_nocache_mod()`
+- `mysql_disable_nocache_mod()`
+- `query_set_nocache($query)`
+- `time_start($timer = 'default')`
+- `time_elapsed($timer = 'default', $human = true)`
+- `memory_get_usage_kb($human = true, $real_usage = false)`
+- `memory_get_usage_mb($human = true, $real_usage = false)`
+- `memory_get_peak_usage_kb($human = true, $real_usage = false)`
+- `memory_get_peak_usage_mb($human = true, $real_usage = false)`
+- `memory_usage_format($usage, $unit, $human)`
 
 ### Filters
 
@@ -46,3 +66,24 @@ Collection of wp-cubi functions for WordPress
 - `str_ends_with($string, $search)`
 - `trigger_404($query = null)`
 - `override_php_limits($time_limit = 604800, $memory_limit = '512M')`
+
+
+## Available classes
+
+### IterativeWpQuery
+
+(See [complete class documentation](https://github.com/globalis-ms/wp-cubi-helpers/tree/master/src/classes/IterativeWpQuery/README.md))
+
+Collection of WordPress query objects wrappers, allowing to iterate through the results of large queries in a scalable way.
+
+Provided wrappers are `IterativeWpQueryPost`, `IterativeWpQueryTerm`, `IterativeWpQueryUser`, `IterativeWpQueryComment`, and for multisite-only: `IterativeWpQuerySite`, `IterativeWpQueryNetwork`.
+
+**Example:**
+
+```php
+$query = new \Globalis\WP\Cubi\IterativeWpQueryPost(['post_type' => 'wine']);
+
+while($row = $query->getRow()) {
+	// do something with $row
+}
+```

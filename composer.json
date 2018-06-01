@@ -20,18 +20,27 @@
     "support": {
         "issues": "https://github.com/globalis-ms/wp-cubi-helpers/issues"
     },
+    "require": {
+        "php": ">=7.0"
+    },
     "require-dev": {
         "squizlabs/php_codesniffer": "^2.5.1"
     },
     "autoload": {
         "files": [
-            "src/functions-cache.php",
-            "src/functions-filters.php",
-            "src/functions-mails.php",
-            "src/functions-permalinks.php",
-            "src/functions-templating.php",
-            "src/functions-urls.php",
-            "src/functions-utils.php"
-        ]
+            "src/functions/cache.php",
+            "src/functions/debug.php",
+            "src/functions/filters.php",
+            "src/functions/mails.php",
+            "src/functions/permalinks.php",
+            "src/functions/templating.php",
+            "src/functions/urls.php",
+            "src/functions/utils.php"
+        ],
+        "psr-4": {
+            "Globalis\\WP\\Cubi\\": [
+                "src/classes/IterativeWpQuery"
+            ]
+        }
     }
 }
