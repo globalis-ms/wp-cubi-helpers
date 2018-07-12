@@ -10,7 +10,7 @@ namespace Globalis\WP\Cubi;
  *
  * @return bool
  */
-function str_starts_with($string, $search)
+function str_starts_with(string $string, string $search) : bool
 {
     return substr($string, 0, strlen($search)) === $search;
 }
@@ -23,7 +23,7 @@ function str_starts_with($string, $search)
  *
  * @return bool
  */
-function str_ends_with($string, $search)
+function str_ends_with(string $string, string $search) : bool
 {
     return substr($string, -strlen($search)) === $search;
 }
@@ -35,7 +35,7 @@ function str_ends_with($string, $search)
  *
  * @return void
  */
-function trigger_404($query = null)
+function trigger_404(\WP_Query $query = null)
 {
     global $wp_query;
     if (isset($query)) {
@@ -52,8 +52,10 @@ function trigger_404($query = null)
  *
  * @param int    $time_limit   The maximum time in seconds a script is allowed to run before it is terminated by the parser.
  * @param string $memory_limit The maximum amount of memory in bytes that a script is allowed to allocate.
+ *
+ * @return void
  */
-function override_php_limits($time_limit = 604800, $memory_limit = '512M')
+function override_php_limits(int $time_limit = 604800, string $memory_limit = '512M')
 {
     ini_set('memory_limit', $memory_limit);
     ini_set('max_execution_time', $time_limit);

@@ -7,9 +7,9 @@ namespace Globalis\WP\Cubi;
  *
  * @param  bool   $remove_query_args If true, will remove query string from url.
  *
- * @return string $url               The current url.
+ * @return string                    The current url.
  */
-function get_current_url($remove_query_args = false)
+function get_current_url(bool $remove_query_args = false) : string
 {
     if (defined('WP_SCHEME') && defined('WP_DOMAIN')) {
         $protocol = WP_SCHEME;
@@ -36,7 +36,7 @@ function get_current_url($remove_query_args = false)
  *
  * @return bool           If the current url starts with searched string.
  */
-function current_url_starts_with($search, $remove_query_args = false)
+function current_url_starts_with(string $search, bool $remove_query_args = false) : bool
 {
     return str_starts_with(get_current_url($remove_query_args), $search);
 }
@@ -49,7 +49,7 @@ function current_url_starts_with($search, $remove_query_args = false)
  *
  * @return bool           If the current url ends with searched string.
  */
-function current_url_ends_with($search, $remove_query_args = false)
+function current_url_ends_with(string $search, bool $remove_query_args = false) : bool
 {
     return str_ends_with(get_current_url($remove_query_args), $search);
 }
