@@ -5,12 +5,12 @@ namespace Globalis\WP\Cubi;
 /**
  * Get page permalink based on page template
  *
- * @param  string $template The filename of the page's assigned custom template.
- * @param  bool   $default  The value to return if no post has been found.
+ * @param  string   $template The filename of the page's assigned custom template.
+ * @param  mixed    $default  The value to return if no post has been found.
  *
  * @return string|mixed     The page permalink or the default value.
  */
-function get_permalink_by_template($template, $default = false)
+function get_permalink_by_template(string $template, $default = false)
 {
     static $permalinks = [];
     if (!isset($permalinks[$template])) {

@@ -11,7 +11,7 @@ namespace Globalis\WP\Cubi;
  *
  * @return string|void   The template part content if true.
  */
-function include_template_part($file, $data = [], $return = false)
+function include_template_part(string $file, array $data = [], bool $return = false)
 {
     ob_start();
     extract($data);
