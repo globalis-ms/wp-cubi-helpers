@@ -15,20 +15,40 @@ Collection of wp-cubi functions for WordPress
 - `flush_cache_all()`
 - `flush_cache_wpdb()`
 - `flush_cache_object()`
+- `get_size_cache_wpdb() : int`
+- `get_size_cache_object() : int`
+- `reset_cache_wpdb(int $size)`
+- `reset_cache_object(int $size)`
+- `pop_cache_wpdb()`
+- `pop_cache_object()`
+- `savequeries_enabled() : bool`
+
+### Debug
+
+- `mysql_enable_nocache_mod()`
+- `mysql_disable_nocache_mod()`
+- `query_set_nocache(string $query) : string`
+- `time_start(string $timer = 'default') : int`
+- `time_elapsed(string $timer = 'default', bool $human = true)`
+- `memory_get_usage_kb(bool $human = true, bool $real_usage = false)`
+- `memory_get_usage_mb(bool $human = true, bool $real_usage = false)`
+- `memory_get_peak_usage_kb(bool $human = true, bool $real_usage = false)`
+- `memory_get_peak_usage_mb(bool $human = true, bool $real_usage = false)`
+- `memory_usage_format(int $usage, string $unit, bool $human)`
 
 ### Filters
 
-- `add_filter($tag, $function_to_add, $priority = 10, $accepted_args = 1)`
-- `add_action($tag, $function_to_add, $priority = 10, $accepted_args = 1)`
-- `remove_filter_anonymous_object($tag, $class_name, $method_name, $priority = 10)`
+- `add_filter(string $tag, callable $function_to_add, int $priority = 10, int $accepted_args = 1)`
+- `add_action(string $tag, callable $function_to_add, int $priority = 10, int $accepted_args = 1)`
+- `remove_filter_anonymous_object(string $tag, string $class_name, string $method_name, int $priority = 10) : bool`
 
 ### Mails
 
-- `wp_mail_html($to, $subject, $message, $headers = [], $attachments = [])`
+- `wp_mail_html($to, string $subject, string $message, $headers = [], $attachments = []) : bool`
 
 ### Permalinks
 
-- `get_permalink_by_template($template, $default = false)`
+- `get_permalink_by_template(string $template, $default = false)`
 
 ### Templating
 
@@ -36,13 +56,13 @@ Collection of wp-cubi functions for WordPress
 
 ### Urls
 
-- `get_current_url($remove_query_args = false)`
-- `current_url_starts_with($search, $remove_query_args = false)`
-- `current_url_ends_with($search, $remove_query_args = false)`
+- `get_current_url(bool $remove_query_args = false) : string`
+- `current_url_starts_with(string $search, bool $remove_query_args = false) : bool`
+- `current_url_ends_with(string $search, bool $remove_query_args = false) : bool`
 
 ### Utils
 
-- `str_starts_with($string, $search)`
-- `str_ends_with($string, $search)`
-- `trigger_404($query = null)`
-- `override_php_limits($time_limit = 604800, $memory_limit = '512M')`
+- `str_starts_with(string $string, string $search) : bool`
+- `str_ends_with(string $string, string $search) : bool`
+- `trigger_404(\WP_Query $query = null)`
+- `override_php_limits(int $time_limit = 604800, string $memory_limit = '512M')`
