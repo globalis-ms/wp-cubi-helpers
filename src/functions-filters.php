@@ -14,7 +14,7 @@ namespace Globalis\WP\Cubi;
  *
  * @return mixed                    The result of the native add_filter() function, or true
  */
-function add_filter($tag, $function_to_add, $priority = 10, $accepted_args = 1)
+function add_filter(string $tag, callable $function_to_add, int $priority = 10, int $accepted_args = 1)
 {
     if (function_exists('add_filter')) {
         return \add_filter($tag, $function_to_add, $priority, $accepted_args);
@@ -37,7 +37,7 @@ function add_filter($tag, $function_to_add, $priority = 10, $accepted_args = 1)
  *
  * @return mixed                    The result of the native add_filter() function, or true
  */
-function add_action($tag, $function_to_add, $priority = 10, $accepted_args = 1)
+function add_action(string $tag, callable $function_to_add, int $priority = 10, int $accepted_args = 1)
 {
     return add_filter($tag, $function_to_add, $priority, $accepted_args);
 }
@@ -50,9 +50,9 @@ function add_action($tag, $function_to_add, $priority = 10, $accepted_args = 1)
  * @param string $method_name   The function which should be removed.
  * @param int    $priority      The priority of the function (as defined when the function was originally hooked).
  *
- * @return int   $removed       The number of filters removed.
+ * @return boolean              Whether filters removed successfully.
  */
-function remove_filter_anonymous_object($tag, $class_name, $method_name, $priority = 10)
+function remove_filter_anonymous_object(string $tag, string $class_name, string $method_name, int $priority = 10) : bool
 {
     global $wp_filter;
 
