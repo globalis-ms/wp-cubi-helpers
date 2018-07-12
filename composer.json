@@ -20,12 +20,16 @@
     "support": {
         "issues": "https://github.com/globalis-ms/wp-cubi-helpers/issues"
     },
+    "require": {
+        "php": ">=7.0"
+    },
     "require-dev": {
         "squizlabs/php_codesniffer": "^2.5.1"
     },
     "autoload": {
         "files": [
             "src/functions-cache.php",
+            "src/functions-debug.php",
             "src/functions-filters.php",
             "src/functions-mails.php",
             "src/functions-permalinks.php",
