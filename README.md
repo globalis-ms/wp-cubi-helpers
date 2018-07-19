@@ -66,3 +66,4 @@ Collection of wp-cubi functions for WordPress
 - `str_ends_with(string $string, string $search) : bool`
 - `trigger_404(\WP_Query $query = null)`
 - `override_php_limits(int $time_limit = 604800, string $memory_limit = '512M')`
+- `get_client_ip_address() : string`
