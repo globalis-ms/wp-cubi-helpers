@@ -41,7 +41,7 @@ function query_set_nocache(string $query) : string
  *
  * @return int           The time.
  */
-function time_start(string $timer = 'default') : int
+function time_start(string $timer = 'default') : float
 {
     static $start_time = [];
 
