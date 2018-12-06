@@ -39,7 +39,7 @@ function query_set_nocache(string $query) : string
  *
  * @param  string $timer The name of the timer.
  *
- * @return int           The time.
+ * @return float         The time.
  */
 function time_start(string $timer = 'default') : float
 {
@@ -58,7 +58,7 @@ function time_start(string $timer = 'default') : float
  * @param  string $timer The name of the timer.
  * @param  bool   $human Return in a human readable format.
  *
- * @return string|int    The time.
+ * @return string|float  The time.
  */
 function time_elapsed(string $timer = 'default', bool $human = true)
 {
@@ -77,7 +77,7 @@ function time_elapsed(string $timer = 'default', bool $human = true)
  * @param  bool $human      Return in a human readable format.
  * @param  bool $real_usage Native parameter of memory_get_usage().
  *
- * @return string|int       The memory usage.
+ * @return string|float     The memory usage.
  */
 function memory_get_usage_kb(bool $human = true, bool $real_usage = false)
 {
@@ -90,7 +90,7 @@ function memory_get_usage_kb(bool $human = true, bool $real_usage = false)
  * @param  bool $human      Return in a human readable format.
  * @param  bool $real_usage Native parameter of memory_get_usage().
  *
- * @return string|int       The memory usage.
+ * @return string|float     The memory usage.
  */
 function memory_get_usage_mb(bool $human = true, bool $real_usage = false)
 {
@@ -103,7 +103,7 @@ function memory_get_usage_mb(bool $human = true, bool $real_usage = false)
  * @param  bool $human      Return in a human readable format.
  * @param  bool $real_usage Native parameter of memory_get_peak_usage().
  *
- * @return string|int       The memory usage.
+ * @return string|float     The memory usage.
  */
 function memory_get_peak_usage_kb(bool $human = true, bool $real_usage = false)
 {
@@ -116,7 +116,7 @@ function memory_get_peak_usage_kb(bool $human = true, bool $real_usage = false)
  * @param  bool $human      Return in a human readable format.
  * @param  bool $real_usage Native parameter of memory_get_peak_usage().
  *
- * @return string|int       The memory usage.
+ * @return string|float     The memory usage.
  */
 function memory_get_peak_usage_mb(bool $human = true, bool $real_usage = false)
 {
@@ -127,13 +127,13 @@ function memory_get_peak_usage_mb(bool $human = true, bool $real_usage = false)
 /**
  * Format the memory usage
  *
- * @param  int $usage    The memory usage.
+ * @param  float $usage  The memory usage.
  * @param  string $unit  The memory unit.
  * @param  bool $human   Return in a human readable format.
  *
- * @return string|int       The formatted memory usage.
+ * @return string|float  The formatted memory usage.
  */
-function memory_usage_format(int $usage, string $unit, bool $human)
+function memory_usage_format(float $usage, string $unit, bool $human)
 {
     if ($human) {
         return sprintf('%s %s', number_format($usage, 2), $unit);

@@ -28,13 +28,13 @@ Collection of wp-cubi functions for WordPress
 - `mysql_enable_nocache_mod()`
 - `mysql_disable_nocache_mod()`
 - `query_set_nocache(string $query) : string`
-- `time_start(string $timer = 'default') : int`
+- `time_start(string $timer = 'default') : float`
 - `time_elapsed(string $timer = 'default', bool $human = true)`
 - `memory_get_usage_kb(bool $human = true, bool $real_usage = false)`
 - `memory_get_usage_mb(bool $human = true, bool $real_usage = false)`
 - `memory_get_peak_usage_kb(bool $human = true, bool $real_usage = false)`
 - `memory_get_peak_usage_mb(bool $human = true, bool $real_usage = false)`
-- `memory_usage_format(int $usage, string $unit, bool $human)`
+- `memory_usage_format(float $usage, string $unit, bool $human)`
 
 ### Filters
 
