@@ -63,11 +63,21 @@ function override_php_limits(int $time_limit = 604800, string $memory_limit = '5
 }
 
 /**
+ * Check if current request is from command line
+ *
+ * @return bool
+ */
+function is_cli()
+{
+    return PHP_SAPI === 'cli';
+}
+
+/**
  * Check if current request is in frontend
  *
  * @return bool
  */
 function is_frontend()
 {
-    return !is_admin() && !wp_doing_ajax() && !wp_doing_cron();
+    return !is_cli() && !is_admin() && !wp_doing_ajax() && !wp_doing_cron();
 }
