@@ -13,7 +13,7 @@ namespace Globalis\WP\Cubi;
  *
  * @return bool                     Whether the email contents were sent successfully.
  */
-function wp_mail_html($to, string $subject, string $message, $headers = [], $attachments = []) : bool
+function wp_mail_html($to, string $subject, string $message, $headers = [], $attachments = []): bool
 {
     $headers = array_merge(['Content-Type: text/html; charset=' . get_bloginfo('charset')], $headers);
     return wp_mail($to, $subject, $message, $headers, $attachments);

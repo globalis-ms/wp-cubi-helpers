@@ -10,7 +10,7 @@ namespace Globalis\WP\Cubi;
  *
  * @return bool
  */
-function str_starts_with(string $string, string $search) : bool
+function str_starts_with(string $string, string $search): bool
 {
     return substr($string, 0, strlen($search)) === $search;
 }
@@ -23,7 +23,7 @@ function str_starts_with(string $string, string $search) : bool
  *
  * @return bool
  */
-function str_ends_with(string $string, string $search) : bool
+function str_ends_with(string $string, string $search): bool
 {
     return substr($string, -strlen($search)) === $search;
 }
