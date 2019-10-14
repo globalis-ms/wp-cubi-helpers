@@ -55,7 +55,7 @@ function flush_cache_object()
  *
  * @return int The size of $wpdb->queries.
  */
-function get_size_cache_wpdb() : int
+function get_size_cache_wpdb(): int
 {
     global $wpdb;
 
@@ -71,7 +71,7 @@ function get_size_cache_wpdb() : int
  *
  * @return int The size of $wp_object_cache->cache.
  */
-function get_size_cache_object() : int
+function get_size_cache_object(): int
 {
     global $wp_object_cache;
 
@@ -157,7 +157,7 @@ function pop_cache_object()
  *
  * @return bool The state of SAVEQUERIES.
  */
-function savequeries_enabled() : bool
+function savequeries_enabled(): bool
 {
     return defined('SAVEQUERIES') && SAVEQUERIES;
 }

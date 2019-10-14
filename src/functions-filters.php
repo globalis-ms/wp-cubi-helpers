@@ -52,7 +52,7 @@ function add_action(string $tag, callable $function_to_add, int $priority = 10, 
  *
  * @return boolean              Whether filters removed successfully.
  */
-function remove_filter_anonymous_object(string $tag, string $class_name, string $method_name, int $priority = 10) : bool
+function remove_filter_anonymous_object(string $tag, string $class_name, string $method_name, int $priority = 10): bool
 {
     global $wp_filter;
 

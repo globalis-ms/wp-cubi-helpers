@@ -29,7 +29,7 @@ function mysql_disable_nocache_mod()
  *
  * @return string        The modified query.
  */
-function query_set_nocache(string $query) : string
+function query_set_nocache(string $query): string
 {
     return preg_replace('/SELECT(\s)/i', 'SELECT SQL_NO_CACHE$1', $query, 1);
 }
@@ -41,7 +41,7 @@ function query_set_nocache(string $query) : string
  *
  * @return float         The time.
  */
-function time_start(string $timer = 'default') : float
+function time_start(string $timer = 'default'): float
 {
     static $start_time = [];
 
