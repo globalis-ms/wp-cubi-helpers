@@ -31,7 +31,13 @@ function mysql_disable_nocache_mod()
  */
 function query_set_nocache(string $query): string
 {
-    return preg_replace('/SELECT(\s)/i', 'SELECT SQL_NO_CACHE$1', $query, 1);
+    $select_query = trim($query);
+
+    if (0 === stripos($select_query, 'SELECT ') && 0 !== stripos($select_query, 'SELECT SQL_NO_CACHE')) {
+        return 'SELECT SQL_NO_CACHE' . substr($select_query, 6);
+    }
+
+    return $query;
 }
 
 /**
