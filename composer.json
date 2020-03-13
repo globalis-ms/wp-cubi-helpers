@@ -33,6 +33,7 @@
             "src/functions-filters.php",
             "src/functions-mails.php",
             "src/functions-permalinks.php",
+            "src/functions-strings.php",
             "src/functions-templating.php",
             "src/functions-urls.php",
             "src/functions-utils.php"
