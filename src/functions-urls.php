@@ -11,7 +11,7 @@ namespace Globalis\WP\Cubi;
  */
 function get_current_url(bool $remove_query_args = false): string
 {
-    if (wp_doing_cron()) {
+    if (is_cli() || wp_doing_cron()) {
         return '';
     }
 
