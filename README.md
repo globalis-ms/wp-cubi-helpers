@@ -8,6 +8,14 @@ Collection of wp-cubi functions for WordPress
 
 [![wp-cubi](https://github.com/globalis-ms/wp-cubi/raw/master/.resources/wp-cubi-500x175.jpg)](https://github.com/globalis-ms/wp-cubi/)
 
+## Requirements
+
+- PHP 8.0, 8.1 or 8.2
+
+## Installation
+
+- `composer require globalis/wp-cubi-helpers`
+
 ## Available functions
 
 ### Cache
@@ -66,3 +74,7 @@ Collection of wp-cubi functions for WordPress
 - `str_ends_with(string $string, string $search): bool`
 - `trigger_404(\WP_Query $query = null)`
 - `override_php_limits(int $time_limit = 604800, string $memory_limit = '512M')`
+
+## Development
+
+Before opening pull requests, please check and apply project coding standards with `./vendor/bin/phpcs .` and/or `./vendor/bin/phpcbf .`
