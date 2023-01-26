@@ -21,10 +21,10 @@
         "issues": "https://github.com/globalis-ms/wp-cubi-helpers/issues"
     },
     "require": {
-        "php": ">=7.2"
+        "php": ">=8.0"
     },
     "require-dev": {
-        "squizlabs/php_codesniffer": "^3.5.0"
+        "squizlabs/php_codesniffer": "^3.7.1"
     },
     "autoload": {
         "files": [
