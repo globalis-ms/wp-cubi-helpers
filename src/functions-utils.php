@@ -9,7 +9,7 @@ namespace Globalis\WP\Cubi;
  *
  * @return void
  */
-function trigger_404(\WP_Query $query = null)
+function trigger_404(?\WP_Query $query = null)
 {
     global $wp_query;
     if (isset($query)) {
